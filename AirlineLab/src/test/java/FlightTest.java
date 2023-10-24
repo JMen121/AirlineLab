@@ -19,17 +19,23 @@ public class FlightTest {
 
     }
 
-//    @Test
-//    public void canAddPassenger(){
-//        flight.addPassenger(passenger);
-//        assertThat(flight.getPassengers()).isEqualTo(passenger);
-//    }
+  @Test
+  public void canAddPassenger(){
+       flight.addPassenger(passenger);
+     assertThat(flight.getPassengers().size()).isEqualTo(1);
+   }
 
-    @Test
+   @Test
     public void canRemovePassenger(){
         flight.addPassenger(passenger);
         flight.removePassenger(passenger);
-        assertThat(flight.getPassengers()).isEqualTo(0);
+        assertThat(flight.getPassengers()).size().isEqualTo(0);
+    }
+
+    @Test
+    public void canCheckStatus(){
+        flight.setGateNumber(5);
+        assertThat(flight.checkStatus()).isEqualTo(true);
     }
 
 }
