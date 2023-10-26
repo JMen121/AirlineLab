@@ -22,28 +22,55 @@ public class ManagingSystemTest {
     }
 
 
-    /*@Test
+    @Test
     public void canSetFlightList(){
-        managingSystem.FlightList(Flight flight);
-        assertThat(managingSystem.getFlightList());
-    }*/
+        managingSystem.createNewFlight(flight);
+        managingSystem.createNewFlight(flight);
+        managingSystem.getFlightList();
+        assertThat(managingSystem.getFlightList().size()).isEqualTo(2);
+    }
+
+   @Test
+    public void canBookPassenger(){
+        managingSystem.bookPassenger(passenger);
+        managingSystem.bookPassenger(passenger);
+        managingSystem.bookPassenger(passenger);
+       managingSystem.removePassenger(passenger);
+      assertThat(managingSystem.getBookedList().size()).isEqualTo(2);}
+
+
+
 
     @Test
-    public void canBookPassenger(Passenger passenger){
-        managingSystem.setBookedList(passenger);
-        assertThat(managingSystem.)
+    public void canRemovePassenger(){
+        managingSystem.bookPassenger(passenger);
+        managingSystem.bookPassenger(passenger);
+        managingSystem.removePassenger(passenger);
+        assertThat(managingSystem.getBookedList().size()).isEqualTo(1);
     }
 
     @Test
-    public void canRemovePassenger(Passenger passenger){}
+    public void canCreateNewFlight(){
+        managingSystem.createNewFlight(flight);
+        managingSystem.createNewFlight(flight);
+        managingSystem.createNewFlight(flight);
+        managingSystem.cancelFlight(flight);
+        assertThat(managingSystem.getFlightList().size()).isEqualTo(2);
+    }
 
     @Test
-    public void canCreateNewFlight(){}
+    public void canCancelFlights(){
+        managingSystem.createNewFlight(flight);
+        managingSystem.createNewFlight(flight);
+        managingSystem.cancelFlight(flight);
+        assertThat(managingSystem.getFlightList().size()).isEqualTo(1);
+    }
 
     @Test
-    public void canCancelFlights(){}
-
-    @Test
-    public void canDisplayAllFlights(){}
+    public void canDisplayAllFlights(){
+        managingSystem.createNewFlight(flight);
+        managingSystem.createNewFlight(flight);
+        assertThat(managingSystem.getFlightList().size()).isEqualTo(2);
+    }
 
 }
