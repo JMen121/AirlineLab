@@ -1,3 +1,7 @@
+package Airline;
+
+import Airline.Flight;
+
 import java.util.ArrayList;
 
 public class ManagingSystem {

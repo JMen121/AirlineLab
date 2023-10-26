@@ -1,7 +1,8 @@
+import Airline.Flight;
+import Airline.ManagingSystem;
+import Airline.Passenger;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
